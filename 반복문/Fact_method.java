@@ -10,9 +10,8 @@ public class Fact_method{
 		else i = 1;
 		do{
 			cnt*=i;
-			if(i!=n) System.out.print(i+"*");
-			else System.out.print(i);
-			i++;	
+			if(i!=n) System.out.print(i++ +"*");
+			else System.out.print(i++);
 		}
 		while(i<=n);
 
