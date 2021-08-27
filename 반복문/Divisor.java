@@ -4,12 +4,15 @@ public class Divisor{
 		Scanner scan = new Scanner(System.in);
 		System.out.print("숫자를 입력하시오 >> ");
 		int n = scan.nextInt();
+		div(n);
 
+	}
+	static void div(int s){
 		int i = 1;
 		do{
-			if(n%i==0) System.out.print(i+"\t");
+			if(s%i==0) System.out.print(i+"\t");
 			i++;
 		}
-		while(i<=n);
+		while(i<=s);
 	}
 }
