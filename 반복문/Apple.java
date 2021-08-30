@@ -1,12 +1,12 @@
 public class Apple{
 	public static void main( String args[]){
 
-		int x=4; //Ã¶¼ö
-		int y=2; //¿µÈñ
+		int x=4; //ì² ìˆ˜
+		int y=2; //ì˜í¬
 
 		for(int i = 1; i<=100; i++){
 			if( (x-1)==(y+1) && (x+1)==2*(y-1))
-				System.out.print("Ã¶¼ö : "+x+"°³\n"+"¿µÈñ : "+y+"°³");
+				System.out.print("ì² ìˆ˜ : "+x+"ê°œ\n"+"ì˜í¬ : "+y+"ê°œ");
 			x++;
 			y++;
 		}
