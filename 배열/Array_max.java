@@ -6,6 +6,8 @@ public class Array_max {
 		
 		Scanner scan = new Scanner(System.in);
 		int[] arr = new int[10];
+		
+		System.out.print("숫자 10개를 입력하시오 >> ");
 		for(int i = 0; i<arr.length; i++) 
 			arr[i] = scan.nextInt();
 		
@@ -15,6 +17,7 @@ public class Array_max {
 			if(arr[i]>max)
 				max = arr[i];
 		}
+		
 		System.out.println(max);
 		
 	}
