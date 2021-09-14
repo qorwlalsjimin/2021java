@@ -12,6 +12,11 @@ public class Number_Game {
 			System.out.print("숫자 입력 >> ");
 			m = scan.nextInt();
 			cnt++;
+			
+			if(m>num)
+				System.out.println("down!");
+			else if(m<num)
+				System.out.println("up!");
 		}while(m!=num);
 		
 		if(cnt<=4)
