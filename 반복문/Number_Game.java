@@ -5,15 +5,14 @@ public class Number_Game {
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
 		int cnt = 0, num;
+		int m;
 		num = (int)(Math.random()*10+1);
-		System.out.print("숫자 입력 >> ");
-		int m = scan.nextInt();
-		
-		while(m!=num) {
+
+		do{
 			System.out.print("숫자 입력 >> ");
 			m = scan.nextInt();
 			cnt++;
-		}
+		}while(m!=num);
 		
 		if(cnt<=4)
 			System.out.println("Great");
