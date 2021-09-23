@@ -5,14 +5,19 @@ import java.util.Scanner;
 public class SelectionBubble {
 
 	public static void main(String[] args) {
-Scanner scan = new Scanner(System.in);
+		Scanner scan = new Scanner(System.in);
 		
-		int[] data = new int[] {3,2,4,7,1};
+		System.out.print("데이터 개수 입력 >> ");
+		int index = scan.nextInt();
+		int[] data = new int[index];
+		
+		for(int i = 0; i<data.length; i++)
+			data[i] = scan.nextInt();
 
 		for(int i = 0; i<data.length; i++)
 			System.out.print(data[i]+" ");
 
-		for(int i = 3; i>=0; i--) {
+		for(int i = data.length-2; i>=0; i--) {
 			for(int j = 0; j<=i; j++) {
 				if(data[j]>data[j+1]) {
 					int temp = data[j]; //swap, 임시저장소
@@ -29,3 +34,17 @@ Scanner scan = new Scanner(System.in);
 	}
 
 }
+
+//0 1
+//1 2
+//2 3
+//3 4 //3부분 : /5는 3/7은 5/10은 8/ => data.length-2
+//-----------------
+//0 1
+//1 2
+//2 3
+//-----------------
+//0 1
+//1 2
+//-----------------
+//0 1
