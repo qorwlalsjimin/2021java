@@ -5,9 +5,14 @@ import java.util.Scanner;
 public class SelectionBubble {
 
 	public static void main(String[] args) {
-Scanner scan = new Scanner(System.in);
+		Scanner scan = new Scanner(System.in);
 		
-		int[] data = new int[] {3,2,7,1,5,4,6,1,2,3};
+		System.out.print("데이터 개수 입력 >> ");
+		int index = scan.nextInt();
+		int[] data = new int[index];
+		
+		for(int i = 0; i<data.length; i++)
+			data[i] = scan.nextInt();
 
 		for(int i = 0; i<data.length; i++)
 			System.out.print(data[i]+" ");
