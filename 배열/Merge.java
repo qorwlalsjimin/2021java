@@ -67,14 +67,14 @@ public class Merge { //병합
  		//남은 c방에 다 못들어간 나머지 데이터값 대입
 		if(x==a.length) {
  			for(int i = y; i<b.length; i++) {
- 				c[z] = b[y];
- 				z++; b[y]++;
+ 				c[z] = b[i];
+ 				z++;
  			}
  		}
  		else {
  			for(int i = x; i<a.length; i++) {
- 				c[z] = a[x];
- 				z++; a[x]++;
+ 				c[z] = a[i];
+ 				z++;
  			}
  		}
 		
