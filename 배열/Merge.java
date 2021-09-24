@@ -18,25 +18,9 @@ public class Merge { //병합
 			b[i] = scan.nextInt();
 		
 		//a, b 오름차순 정률
-		int temp;
-		for(int i = 0; i<a.length-1; i++) {
-			for(int j = i+1; j<a.length; j++) {
-				if(a[i]>a[j]) {
-					temp = a[i];
-					a[i] = a[j];
-					a[j] = temp;
-				}
-			}
-		}
-		for(int i = b.length-2; i>=0; i--) {
-			for(int j = 0; j<=i; j++) {
-				if(b[j]>b[j+1]) {
-					temp = b[j];
-					b[j] = b[j+1];
-					b[j+1] = temp;
-				}	
-			}
-		}
+		sort(a);
+		sort(b);
+		
 		//정렬 후 a,b 출력
 		for(int i = 0; i<a.length; i++) 
 			System.out.print(a[i]+" ");
@@ -45,6 +29,7 @@ public class Merge { //병합
 			System.out.print(b[i]+" ");
 			
 		//a,b 병합
+		//merge();
  		int x = 0, y = 0, z = 0;
  		while(true){
  			if(a[x]<b[y]) {
@@ -80,8 +65,19 @@ public class Merge { //병합
 		
 		//정렬 후 c 출력
 		System.out.println();
-		for(int i = 0; i<c.length; i++)
+		for(int i = 0; i<c.length && c[i]!=0; i++)
 			System.out.print(c[i]+" ");
-	}
+	}//main
 
+	static void sort(int[] arr) {
+		for(int i = 0; i<arr.length-1; i++) {
+			for(int j = i+1; j<arr.length; j++) {
+				if(arr[i]>arr[j]) {
+					int temp = arr[i];
+					arr[i] = arr[j];
+					arr[j] = temp;
+				}//if
+			}//for
+		}//for
+	}//sort
 }
