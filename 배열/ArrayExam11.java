@@ -12,11 +12,11 @@ public class ArrayExam11 {
 		
 		System.out.println("--------자바실행---------");
 		for(int i = 0; i<one.length; i++) {
-			if(i != 0) System.out.println();
 			for(int j = 0; j<one[i].length; j++)
 				System.out.print(one[i][j]+" ");
-		}
+			System.out.println();
+		}//for
 
-	}
+	}//main
 
 }
