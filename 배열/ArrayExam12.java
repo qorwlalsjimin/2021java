@@ -9,7 +9,7 @@ public class ArrayExam12 {
 		for(int i = 0; i<one.length; i++) {
 			for(int j = 0; j<one[i].length; j++) {
 				//one[i][j] = k++;
-				one[i][j] = i*4+(j+1);
+				one[i][j] = i*one[i].length+(j+1);
 			}
 
 		}
