@@ -15,10 +15,8 @@ public class ArrayExam13 {
 		
 		System.out.println("-------------자바실행-------------");
 		for(int i = 0; i<one.length; i++) {
-			for(int j = 0; j<one[i].length; j++) {
-				if(one[i][j]==0) continue;
+			for(int j = 0; j<=i; j++) 
 				System.out.print(one[i][j]+"\t");
-			}
 			System.out.println();
 		}//for
 
