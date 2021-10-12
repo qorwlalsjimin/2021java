@@ -10,14 +10,14 @@ public class Quiz_02 {
 			h = i/10%10;
 			t = i/100%10;
 			if(h == t && (i % 9 == 0)) {
-				if(cnt % 10 == 0)
-					System.out.println();
 				System.out.print(i+" ");
 				cnt++;
+				if(cnt % 10 == 0)
+					System.out.println();
 			}
 
 			}//for
-		System.out.println("\n\nÃÑ °¹¼ö´Â "+cnt+"°³ÀÔ´Ï´Ù.");
+		System.out.println("\nÃÑ °¹¼ö´Â "+cnt+"°³ÀÔ´Ï´Ù.");
 	}
 
 }
