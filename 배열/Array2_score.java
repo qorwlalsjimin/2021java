@@ -16,13 +16,13 @@ public class Array2_score {
 			for(int j = 0; j<score[i].length; j++) {
 				System.out.print(sub_title[j]+" : ");
 				score[i][j] = scan.nextInt();
-				if(score[i][j]>20 || score[i][j]<0)
-					j--;
-//				while(score[i][j]>20 || score[i][j]<0) {
-//					System.out.println("다시 입력하시오.");
-//					System.out.print(sub_title[j]+" : ");
-//					score[i][j] = scan.nextInt();
-//				}//while
+//				if(score[i][j]>20 || score[i][j]<0)
+//					j--;
+				while(score[i][j]>20 || score[i][j]<0) {
+					System.out.println("다시 입력하시오.");
+					System.out.print(sub_title[j]+" : ");
+					score[i][j] = scan.nextInt();
+				}//while
 				space += score[i][j];
 			}//for
 			if(max<space) {
@@ -30,7 +30,15 @@ public class Array2_score {
 				team = i+1;
 			}//if
 		}//for
-		System.out.println("\n최고팀 : "+team+"번째 팀 -> 점수 : "+max);
+		
+		for(int i = 0; i<score.length; i++) {
+			System.out.println();
+			System.out.print(i+1+"조 : ");
+			for(int j = 0; j<score[i].length; j++) {
+				System.out.print(score[i][j]+" ");
+			}
+		}
+		System.out.println("\n\n최고팀 : "+team+"번째 팀 -> 점수 : "+max);
 	}
 
 }
