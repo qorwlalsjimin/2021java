@@ -17,16 +17,18 @@ public class Array2_score {
 			for(int j = 0; j<score[i].length; j++) {
 				System.out.print(sub_title[j]+" : ");
 				score[i][j] = scan.nextInt();
-//				if(score[i][j]>20 || score[i][j]<0) {
-//					j--;
-//					space = 0;
-//				}
-				while(score[i][j]>20 || score[i][j]<0) {
-					System.out.println("다시 입력하시오.");
-					System.out.print(sub_title[j]+" : ");
-					score[i][j] = scan.nextInt();
-				}//while
-				tot[i] += score[i][j];
+				if(score[i][j]>20 || score[i][j]<0) {
+					j--;
+					tot[i] = 0;
+				}
+				else
+					tot[i] += score[i][j];
+//				while(score[i][j]>20 || score[i][j]<0) {
+//					System.out.println("다시 입력하시오.");
+//					System.out.print(sub_title[j]+" : ");
+//					score[i][j] = scan.nextInt();
+//				}//while
+//				tot[i] += score[i][j];
 			}//for
 			if(max<tot[i]) {
 				max = tot[i];
