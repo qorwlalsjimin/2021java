@@ -6,14 +6,14 @@ public class Array2_score {
 		
 		Scanner scan = new Scanner(System.in);
 		int[][] score = new int[5][3];
-		int[] sum = new int[5];
-		String[] sub_title = new String[]{"완성도", "창의성", "이해도"," 합계"};
+		int[] tot = new int[score.length];
+		String[] sub_title = new String[]{"완성도", "창의성", "이해도"," 합계", "순위"};
 
 		int max=0, team=0;
 		
 		for(int i = 0; i<score.length; i++) {
 			System.out.println("*"+(i+1)+"조 입력");
-			sum[i] = 0;
+			tot[i] = 0;
 			for(int j = 0; j<score[i].length; j++) {
 				System.out.print(sub_title[j]+" : ");
 				score[i][j] = scan.nextInt();
@@ -26,28 +26,40 @@ public class Array2_score {
 					System.out.print(sub_title[j]+" : ");
 					score[i][j] = scan.nextInt();
 				}//while
-				sum[i] += score[i][j];
+				tot[i] += score[i][j];
 			}//for
-			if(max<sum[i]) {
-				max = sum[i];
+			if(max<tot[i]) {
+				max = tot[i];
 				team = i+1;
 			}//if
 		}//for
 		
 		//출력
-		System.out.println("=========================================");
+		int[] rank = new int[score.length];
+		for(int i = 0; i<score.length; i++)
+			rank[i] = 1;
+		for(int i = 0; i<score.length-1; i++) {
+			for(int j = i+1; j<score.length; j++) {
+				if(tot[i]<tot[j])
+					rank[i]++;
+				else if(tot[i]>tot[j])
+					rank[j]++;
+			}//for
+		}//for
+		
+		System.out.println("============================================");
 		for(int k = 0; k<sub_title.length; k++)
 			System.out.print("\t"+sub_title[k]);
-		System.out.print("\n=========================================");
+		System.out.print("\n============================================");
 		for(int i = 0; i<score.length; i++) {
 			System.out.println();
-			System.out.print(i+1+"조 : \t");
+			System.out.print(i+1+"조 : ");
 			for(int j = 0; j<score[i].length; j++) {
-				System.out.print(score[i][j]+"\t");
+				System.out.print("\t"+score[i][j]);
 			}
-			System.out.println(sum[i]);
+			System.out.print("\t"+tot[i]+"\t"+rank[i]);
 		}
-		System.out.println("\n=========================================");
+		System.out.print("\n============================================");
 		System.out.println("\n최고팀 : "+team+"번째 팀 -> 점수 : "+max);
 	}
 
