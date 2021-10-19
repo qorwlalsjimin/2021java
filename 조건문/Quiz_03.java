@@ -12,8 +12,18 @@ public class Quiz_03 {
 		//반드시 삼항 연산자를 사용할 것
 		
 		Scanner scan = new Scanner(System.in);
-		char c = scan.next().charAt(0);
-		System.out.println( (c>=97) ? c : (c<65) ? c : (char)(c+32) );
+		System.out.print("문자를 입력해주세요 : ");
+		
+//		String c = scan.next();
+//		char ch = c.charAt(0); //괄호 안의 숫자는 몇번째 글자를 캐스팅 할 것인지를 뜻한다. 
+		char ch = scan.next().charAt(0);
+		
+		char result;
+		result = (ch>='A' && ch<='Z') ? (char)(ch+32) : ch;
+		System.out.println("변한 숫자 : "+result);
+
+		System.out.println( (ch>=97) ? ch : (ch<65) ? ch : (char)(ch+32) );
+		
 		
 	}
 	
