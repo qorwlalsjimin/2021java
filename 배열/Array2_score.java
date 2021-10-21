@@ -5,47 +5,40 @@ public class Array2_score {
 	public static void main(String[] args) {
 		
 		Scanner scan = new Scanner(System.in);
-		int[][] score = new int[5][3];
-		int[] tot = new int[score.length];
+		int[][] score = new int[5][3+2]; //총점 순위
 		String[] sub_title = new String[]{"완성도", "창의성", "이해도"," 합계", "순위"};
 
 		int max=0, team=0;
 		
+		//입력
 		for(int i = 0; i<score.length; i++) {
 			System.out.println("*"+(i+1)+"조 입력");
-			tot[i] = 0;
-			for(int j = 0; j<score[i].length; j++) {
+			score[i][3] = 0; //이건 뭥미
+			for(int j = 0; j<score[i].length-2; j++) {
 				System.out.print(sub_title[j]+" : ");
 				score[i][j] = scan.nextInt();
 				if(score[i][j]>20 || score[i][j]<0) {
 					j--;
-					tot[i] = 0;
+					score[i][3] = 0;
 				}
 				else
-					tot[i] += score[i][j];
-//				while(score[i][j]>20 || score[i][j]<0) {
-//					System.out.println("다시 입력하시오.");
-//					System.out.print(sub_title[j]+" : ");
-//					score[i][j] = scan.nextInt();
-//				}//while
-//				tot[i] += score[i][j];
-			}//for
-			if(max<tot[i]) {
-				max = tot[i];
+					score[i][3] += score[i][j];
+			}//for j
+			if(max<score[i][3]) {
+				max = score[i][3];
 				team = i+1;
 			}//if
-		}//for
+		}//for i
 		
 		//출력
-		int[] rank = new int[score.length];
 		for(int i = 0; i<score.length; i++)
-			rank[i] = 1;
+			score[i][4] = 1;
 		for(int i = 0; i<score.length-1; i++) {
 			for(int j = i+1; j<score.length; j++) {
-				if(tot[i]<tot[j])
-					rank[i]++;
-				else if(tot[i]>tot[j])
-					rank[j]++;
+				if(score[i][3]<score[j][3])
+					score[i][4]++;
+				else if(score[i][3]>score[j][3])
+					score[j][4]++;
 			}//for
 		}//for
 		
@@ -56,10 +49,10 @@ public class Array2_score {
 		for(int i = 0; i<score.length; i++) {
 			System.out.println();
 			System.out.print(i+1+"조 : ");
-			for(int j = 0; j<score[i].length; j++) {
+			for(int j = 0; j<score[i].length-2; j++) {
 				System.out.print("\t"+score[i][j]);
 			}
-			System.out.print("\t"+tot[i]+"\t"+rank[i]);
+			System.out.print("\t"+score[i][3]+"\t"+score[i][4]);
 		}
 		System.out.print("\n============================================");
 		System.out.println("\n최고팀 : "+team+"번째 팀 -> 점수 : "+max);
