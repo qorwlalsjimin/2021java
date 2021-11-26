@@ -1,8 +1,13 @@
 package Class;
 
 class Account{
-	String accountnum;
-	int balance;
+	private int accountnum;
+	private int balance;
+	static int baseaccnum = 100; //static :클래스 변수 
+	
+	Account(){
+		accountnum += ++baseaccnum;
+	}
 	
 	void deposit(int money) {
 		balance += money;
@@ -25,7 +30,7 @@ public class AccountTest {
 	public static void main(String[] args) {
 
 		Account acc1 = new Account();
-		acc1.accountnum = "101";
+		
 		System.out.println(acc1.toString());
 		acc1.deposit(5000);
 		System.out.println(acc1.toString());
@@ -33,6 +38,9 @@ public class AccountTest {
 		System.out.println(acc1.toString());
 		acc1.withdraw(3500);
 		System.out.println(acc1.toString());
+		
+		Account acc2 = new Account();
+		System.out.println(acc2.toString());
 	}
 
 }
